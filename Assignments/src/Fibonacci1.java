@@ -15,7 +15,7 @@ public class Fibonacci1 {
         //try (write output to file) catch (error writing to file) block
         try {
             //make new file, fibonacci.txt (1st parameter), overwrite file each time program is run (2nd parameter)
-            FileWriter fw = new FileWriter("fibonacci.txt", false);
+            FileWriter fw = new FileWriter("fibonacci1.txt", false);
 
             //calculate first 54 fibonacci numbers (i = 0 to i = 53)
             for (int i = 0; i <= 53; i++){ 
@@ -39,7 +39,7 @@ public class Fibonacci1 {
             fw.close();
 
             //print statement to confirm output was saved to a new file
-            System.out.println("saved to fibonacci.txt");
+            System.out.println("saved to fibonacci1.txt");
         }
         //catch error writing to file
         catch (IOException e){
