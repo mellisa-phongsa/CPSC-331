@@ -47,7 +47,6 @@ public class Fibonacci1 {
         }
     }
         
-    }
     //fib1() method, calculates the nth fibonacci number using a recursive algorithm 
     public static BigInteger Fib1(int n){
         if (n < 2) {
