@@ -34,7 +34,7 @@ public class Fibonacci2 {
                 duration = end - start;
 
                 //write output to file: fibonacci2.txt
-                fw.write("Fibonacci(" + i + ") = " + fibNumber + "- Time taken: " + duration + " nanoseconds");
+                fw.write("Fibonacci(" + i + ") = " + fibNumber + " - Time taken: " + duration + " nanoseconds\n");
             }
             //close file writer
             fw.close();
@@ -51,8 +51,12 @@ public class Fibonacci2 {
 
     //fib2() method, calculates the nth fibonacci number using an iterative algorithm
     public static BigInteger Fib2(int n){
+
+        //assign values and initialize j and i
         BigInteger i = BigInteger.ONE;
         BigInteger j = BigInteger.ZERO;
+
+        //calculate nth fib number using iterative method
         for (int k = 1; k <= n; k++){
             j = i.add(j);
             i = j.subtract(i);

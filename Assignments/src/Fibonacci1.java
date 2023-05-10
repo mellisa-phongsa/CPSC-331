@@ -33,7 +33,7 @@ public class Fibonacci1 {
                 duration = end - start;
 
                 //write output to file: fibonacci.txt
-                fw.write("Fibonacci(" + i + ") = " + fibNumber + " - Time taken: " + duration + " nanoseconds");
+                fw.write("Fibonacci(" + i + ") = " + fibNumber + " - Time taken: " + duration + " nanoseconds\n");
             }
             //file writer
             fw.close();
