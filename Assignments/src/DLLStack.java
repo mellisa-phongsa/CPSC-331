@@ -1,3 +1,5 @@
+//This is a doubly linked list implementation of a stack
+
 public class DLLStack<T> {
 
     private static class Node<T> {
@@ -9,8 +11,7 @@ public class DLLStack<T> {
             this.value = value;
         }
     }
-
-    //
+    
     private Node<T> top = null;
     private int size;
 

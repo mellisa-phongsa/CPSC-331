@@ -1,3 +1,5 @@
+//This is a doubly linked list implementation of a circular queue
+
 public class DLLQueue<T> {
 
     private static class Node<T> {
