@@ -1,21 +1,23 @@
+package A1;
 //Cpsc 331 Assignment 1 - Algorithm 2
-//the following algorithm computes the first 54 fibonacci number iteratively
+//the following algorithm computes the nth fibonacci number iteratively
 
 import java.math.BigInteger;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Fibonacci2_54 {
+public class Fibonacci2 {
+    //main() method calls Fib2 in a for loop to calculate the first 5000 fibonacci numbers and measures the time it took to compute each one
     public static void main(String[] args){
 
         //initializing variables
-        int n = 53;
+        int n = 4999;
         long start, end, duration;
 
         //try (write ouput to file) catch (error writing it to file)
         try {
             //make new file, fibonacci2.txt (1st parameter), overwrite file each time program is run (2nd parameter)
-            FileWriter fw = new FileWriter("fibonacci2_54.txt", false);
+            FileWriter fw = new FileWriter("fibonacci2.txt", false);
 
             //calculate first 5000 fibonacci numbers (i = 0 to i = 4999)
             for (int i = 0; i <= n; i++){
@@ -39,7 +41,7 @@ public class Fibonacci2_54 {
             fw.close();
 
             //print statement to confirm output was saved to a new file
-            System.out.println("saved to fibonacci2_54.txt");
+            System.out.println("saved to fibonacci2.txt");
         }
         //catch error
         catch (IOException e){

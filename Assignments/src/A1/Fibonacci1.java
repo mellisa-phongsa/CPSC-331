@@ -1,3 +1,4 @@
+package A1;
 //Cpsc 331 Assignment 1 - Algorithm 1
 //the following algorithm computes the nth fibonacci number recursively
 
