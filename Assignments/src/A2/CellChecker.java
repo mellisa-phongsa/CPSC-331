@@ -5,21 +5,20 @@ public class CellChecker {
     private Cell[][] maze;
     private int numRows;
     private int numCols;
-    private DLLQueue trialQueue;
+    private DLLQueue<Cell> trialQueue;
 
     private static final char WALL = '1';
     private static final char SPACE = '0';
-    private static final char MOUSE = 'm';
     private static final char CHEESE = 'c';
 
-    public CellChecker(Cell[][] maze, int numRows, int numCols, DLLQueue trailQueue) {
+    public CellChecker(Cell[][] maze, int numRows, int numCols, DLLQueue<Cell> trailQueue) {
         this.maze = maze;
         this.numRows = numRows;
         this.numCols = numCols;
         this.trialQueue = trailQueue;
     }
 
-    public void checkNeighborCellQueue(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLQueue structure) {
+    public void checkNeighborCellQueue(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLQueue<Cell> structure) {
         int row = currentCell.row + rowOffset;
         int col = currentCell.col + colOffset;
 
@@ -44,7 +43,7 @@ public class CellChecker {
         }
     }
 
-    public void checkNeighborCellStack(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLStack structure) {
+    public void checkNeighborCellStack(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLStack<Cell> structure) {
         int row = currentCell.row + rowOffset;
         int col = currentCell.col + colOffset;
 
@@ -99,7 +98,7 @@ public class CellChecker {
     }
 
     //
-    public void markTrail(Cell cell, char trailSymbol, DLLQueue trailQueue) {
+    public void markTrail(Cell cell, char trailSymbol, DLLQueue<Cell> trailQueue) {
         cell.type = trailSymbol;
         trailQueue.enqueue(cell);
     }

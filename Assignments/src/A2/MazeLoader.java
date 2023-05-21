@@ -9,10 +9,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class MazeLoader {
-
-    private static final char MOUSE = 'm';
-    private static final char CHEESE = 'c';
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //LoadMazeFromFile function takes a string "filePath" as an argument
     public MazeData loadMazeFromFile(String filePath) throws FileNotFoundException {

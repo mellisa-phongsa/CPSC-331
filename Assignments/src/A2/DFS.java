@@ -2,10 +2,7 @@ package A2;
 import java.io.FileNotFoundException;
 
 public class DFS {
-    private static final char WALL = '1';
-    private static final char SPACE = '0';
     private static final char MOUSE = 'm';
-    private static final char CHEESE = 'c';
 
     private Cell[][] maze;
     private int numRows;
