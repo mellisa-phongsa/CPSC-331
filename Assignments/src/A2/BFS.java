@@ -1,13 +1,12 @@
 //CPSC 331: Assignment 2
 //Names: Hassan Sohail, Mellisa Phongsa
-//Breadth First Search Using a Doubly Linked List Implementation of a Circular Queue
+//Breadth First Search of a maze Using a Doubly Linked List Implementation of a Circular Queue
 
 package A2;
 import java.io.FileNotFoundException;
 public class BFS {
-
+    //declaring variables
     private static final char MOUSE = 'm';
-
     private Cell[][] maze;
     private int numRows;
     private int numCols;
@@ -107,16 +106,19 @@ public class BFS {
                 //break out of the loop
                 break;
             }
-            cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure);
-            cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure);
-            cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure);
-            cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure);
+            //check neighboring cells 
+            cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure); //up
+            cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure); //down
+            cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure); //left
+            cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure); //right
             counter++;
-        } //end
+        }
+        //if cheese has not been found
         if (moreToSearch) {
             //print to terminal
             System.out.println("Cheese (c) not reachable!");
         }
+        //print to terminal
         System.out.println("The mouse moved " + (counter) + " number of times");
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end

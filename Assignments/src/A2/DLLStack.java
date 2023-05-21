@@ -4,7 +4,7 @@
 
 package A2;
 public class DLLStack<T> {
-
+    //declaring variables
     private Node<T> top = null;
     private int size;
 

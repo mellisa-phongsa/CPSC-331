@@ -4,7 +4,7 @@
 
 package A2;
 public class DLLQueue<T> {
-
+    //declaring variables
     private Node<T> front = null;
     private Node<T> back = null;
     private int size;
