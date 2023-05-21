@@ -195,28 +195,37 @@ class MazeSolver {
         trailQueue.enqueue(cell);
     }
 
+
     private void unmarkTrail(Cell cell) {
         cell.type = SPACE;
     }
 
     private void printMaze() {
+        char[][] mazeCopy = new char[numRows][numCols];
+    
+        // Copy the original maze
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
-                Cell cell = maze[row][col];
-                if (cell.type == MOUSE) {
-                    System.out.print('m');
-                } else if (cell.type == CHEESE) {
-                    System.out.print('c');
-                } else if (cell.visited) {
-                    System.out.print('.');
-                } else {
-                    System.out.print(cell.type);
-                }
+                mazeCopy[row][col] = maze[row][col].type;
+            }
+        }
+    
+        // Update the maze with trail movements
+        while (!trailQueue.isEmpty()) {
+            Cell cell = trailQueue.dequeue();
+            mazeCopy[cell.row][cell.col] = cell.type;
+        }
+    
+        // Print the updated maze
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                System.out.print(mazeCopy[row][col]);
             }
             System.out.println();
         }
         System.out.println();
     }
+    
     
     private void saveTrailToFile(String filePath) {
         try (PrintWriter writer = new PrintWriter(filePath)) {
@@ -232,7 +241,7 @@ class MazeSolver {
     public void solveMaze() {
         Cell startCell = null;
         boolean moreToSearch = true;
-
+    
         // Find the start cell
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
@@ -246,95 +255,92 @@ class MazeSolver {
                 break;
             }
         }
-
+    
         if (startCell == null) {
             System.out.println("Start cell (m) not found.");
             return;
         }
-
+    
         structure.push(startCell);
-
+    
         while (!structure.isEmpty() && moreToSearch) {
             Cell currentCell = structure.pop();
             markVisited(currentCell);
+            trailQueue.enqueue(currentCell);
             printMaze();
-
+    
             if (isCheese(currentCell)) {
                 System.out.println("Cheese (c) found!");
                 moreToSearch = false;
                 break;
             }
-
+    
             int row = currentCell.row;
             int col = currentCell.col;
-
+            boolean hasUnvisitedNeighbor = false;
+    
             // Check all neighbor cells
             // Up
             if (isValidPosition(row - 1, col)) {
                 Cell neighbor = maze[row - 1][col];
+                if (!hasUnvisitedNeighbor) {
+                    markTrail(currentCell, 'v');
+                }
                 if (!isVisited(neighbor) && isSpace(neighbor)) {
-                    if (isCheese(neighbor)) {
-                        structure.push(neighbor);
-
-                    }
-                    else {
-                        markTrail(currentCell, '^');
-                        structure.push(neighbor);
-                    }
+                    hasUnvisitedNeighbor = true;
+                    markTrail(currentCell, '^');
+                    structure.push(neighbor);
                 }
             }
-
+    
             // Down
             if (isValidPosition(row + 1, col)) {
                 Cell neighbor = maze[row + 1][col];
+                if (!hasUnvisitedNeighbor) {
+                    markTrail(currentCell, '^');
+                }
                 if (!isVisited(neighbor) && isSpace(neighbor)) {
-                    if (isCheese(neighbor)) {
-                        structure.push(neighbor);
-                    }
-                    else {
-                        markTrail(currentCell, 'v');
-                        structure.push(neighbor);
-                    }
+                    hasUnvisitedNeighbor = true;
+                    markTrail(currentCell, 'v');
+                    structure.push(neighbor);
                 }
             }
-
+    
             // Left
             if (isValidPosition(row, col - 1)) {
                 Cell neighbor = maze[row][col - 1];
+                if (!hasUnvisitedNeighbor) {
+                    markTrail(currentCell, '>');
+                }
                 if (!isVisited(neighbor) && isSpace(neighbor)) {
-                    if (isCheese(neighbor)) {
-                        structure.push(neighbor);
-                    }
-                    else {
-                        markTrail(currentCell, '<');
-                        structure.push(neighbor);
-                    }
+                    hasUnvisitedNeighbor = true;
+                    markTrail(currentCell, '<');
+                    structure.push(neighbor);
                 }
             }
-
+    
             // Right
             if (isValidPosition(row, col + 1)) {
                 Cell neighbor = maze[row][col + 1];
+                if (!hasUnvisitedNeighbor) {
+                    markTrail(currentCell, 'x');
+                }
                 if (!isVisited(neighbor) && isSpace(neighbor)) {
-                    if (isCheese(neighbor)) {
-                        structure.push(neighbor);
-                    }
-                    else {
-                        markTrail(currentCell, '>');
-                        structure.push(neighbor);
-                    }
+                    hasUnvisitedNeighbor = true;
+                    markTrail(currentCell, '>');
+                    structure.push(neighbor);
                 }
             }
         }
-
+    
         if (moreToSearch) {
             System.out.println("Cheese (c) not reachable.");
         }
     }
+    
 
 public static void main(String[] args) {
-    MazeSolver mazeSolver = new MazeSolver("Maze.txt");
+    MazeSolver mazeSolver = new MazeSolver("/Users/hassan/Desktop/CPSC-331-2/Assignments/src/Maze.txt");
     mazeSolver.solveMaze();
-    mazeSolver.saveTrailToFile("trail.txt");
 }
 }
