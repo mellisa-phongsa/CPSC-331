@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class MazeLoader {
-    private static final char WALL = '1';
-    private static final char SPACE = '0';
     private static final char MOUSE = 'm';
     private static final char CHEESE = 'c';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

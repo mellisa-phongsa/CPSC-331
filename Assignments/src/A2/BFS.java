@@ -4,10 +4,7 @@ import java.io.FileNotFoundException;
 //Breadth First Search Using a Doubly Linked List Implementation of a Circular Queue
 public class BFS {
 
-    private static final char WALL = '1';
-    private static final char SPACE = '0';
     private static final char MOUSE = 'm';
-    private static final char CHEESE = 'c';
 
     private Cell[][] maze;
     private int numRows;
@@ -85,10 +82,10 @@ public class BFS {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-public static void main(String[] args) {
-    BFS bfs = new BFS("Maze.txt");
-    bfs.solveMaze();
-    MazeLoader ml = new MazeLoader();
-    ml.saveTrailToFile("trail.txt", bfs.trailQueue);
-}
+    public static void main(String[] args) {
+        BFS bfs = new BFS("Maze.txt");
+        bfs.solveMaze();
+        MazeLoader ml = new MazeLoader();
+        ml.saveTrailToFile("trail.txt", bfs.trailQueue);
+    }
 }
