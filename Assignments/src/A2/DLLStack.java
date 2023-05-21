@@ -1,17 +1,8 @@
+package A2;
 //This is a doubly linked list implementation of a stack
 
 public class DLLStack<T> {
 
-    private static class Node<T> {
-        private T value;
-        private Node<T> next = null;
-        private Node<T> prev = null;
-    
-        public Node(T value) {
-            this.value = value;
-        }
-    }
-    
     private Node<T> top = null;
     private int size;
 

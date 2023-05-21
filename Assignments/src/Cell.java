@@ -16,7 +16,7 @@ public class Cell {
         this.visited = false;
     }
 }
-
+//use DLLStack file instead
 class Stack {
     private class Node {
         Cell data;
@@ -31,7 +31,7 @@ class Stack {
     }
 
     private Node top;
-
+    
     public Stack() {
         this.top = null;
     }
@@ -66,6 +66,7 @@ class Stack {
     }
 }
 
+//use DLLQueue file instead
 class Queue {
     private class Node {
         Cell data;
@@ -115,6 +116,7 @@ class Queue {
     }
 }
 
+//Depth first search
 class MazeSolver {
     private static final char WALL = '1';
     private static final char SPACE = '0';
