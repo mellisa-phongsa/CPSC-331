@@ -88,7 +88,7 @@ public class DFS {
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public static void main(String[] args) {
-    DFS dfs = new DFS("/Users/hassan/Desktop/CPSC-331/Assignments/src/A2/Maze1.txt");
+    DFS dfs = new DFS("Maze.txt");
     dfs.solveMaze();
     MazeLoader ml = new MazeLoader();
     ml.saveTrailToFile("trail.txt", dfs.trailQueue);

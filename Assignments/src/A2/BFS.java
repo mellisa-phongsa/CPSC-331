@@ -124,7 +124,7 @@ public class BFS {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Start main method
     public static void main(String[] args) {
         //pass filename into constructor
-        BFS bfs = new BFS("/Users/hassan/Desktop/CPSC-331/Assignments/src/Maze.txt");
+        BFS bfs = new BFS("Maze.txt");
 
         //call solveMaze method
         bfs.solveMaze();

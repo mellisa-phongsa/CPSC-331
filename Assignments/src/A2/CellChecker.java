@@ -26,13 +26,20 @@ public class CellChecker {
         if (isValidPosition(row, col)) {
             Cell neighbor = maze[row][col];
             if (!isVisited(neighbor) && isSpace(neighbor)) {
-                if (isCheese(neighbor)) {
-                    markTrail(currentCell, trailSymbol, trialQueue);
-                    structure.enqueue(neighbor);
-                } else {
-                    markTrail(currentCell, trailSymbol, trialQueue);
-                    structure.enqueue(neighbor);
-                }
+                markTrail(currentCell, trailSymbol, trialQueue);
+                structure.enqueue(neighbor);
+            }
+            if (isupDeadEnd(currentCell)) {
+                markTrail(currentCell, 'v', trialQueue);
+            }
+            if (isdownDeadEnd(currentCell)) {
+                markTrail(currentCell, '^', trialQueue);
+            }
+            if (isleftDeadEnd(currentCell)) {
+                markTrail(currentCell, '>', trialQueue);
+            }
+            if (isrightDeadEnd(currentCell)) {
+                markTrail(currentCell, '<', trialQueue);
             }
         }
     }
@@ -44,13 +51,20 @@ public class CellChecker {
         if (isValidPosition(row, col)) {
             Cell neighbor = maze[row][col];
             if (!isVisited(neighbor) && isSpace(neighbor)) {
-                if (isCheese(neighbor)) {
-                    markTrail(currentCell, trailSymbol, trialQueue);
-                    structure.push(neighbor);
-                } else {
-                    markTrail(currentCell, trailSymbol, trialQueue);
-                    structure.push(neighbor);
-                }
+                markTrail(currentCell, trailSymbol, trialQueue);
+                structure.push(neighbor);
+            }
+            if (isupDeadEnd(currentCell)) {
+                markTrail(currentCell, 'v', trialQueue);
+            }
+            if (isdownDeadEnd(currentCell)) {
+                markTrail(currentCell, '^', trialQueue);
+            }
+            if (isleftDeadEnd(currentCell)) {
+                markTrail(currentCell, '>', trialQueue);
+            }
+            if (isrightDeadEnd(currentCell)) {
+                markTrail(currentCell, '<', trialQueue);
             }
         }
     }
@@ -88,6 +102,85 @@ public class CellChecker {
     public void markTrail(Cell cell, char trailSymbol, DLLQueue trailQueue) {
         cell.type = trailSymbol;
         trailQueue.enqueue(cell);
+    }
+
+    private boolean isupDeadEnd(Cell cell) {
+        int row = cell.row;
+        int col = cell.col;
+        int numWalls = 0;
+    
+        // Count the number of neighboring walls
+        if (isValidPosition(row - 1, col) && maze[row - 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col - 1) && maze[row][col - 1].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col + 1) && maze[row][col + 1].type == WALL) {
+            numWalls++;
+        }
+    
+        // Cell is a dead end if it has three neighboring walls
+        return numWalls == 3;
+    }
+    private boolean isdownDeadEnd(Cell cell) {
+        int row = cell.row;
+        int col = cell.col;
+        int numWalls = 0;
+    
+        // Count the number of neighboring walls
+        if (isValidPosition(row + 1, col) && maze[row + 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col - 1) && maze[row][col - 1].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col + 1) && maze[row][col + 1].type == WALL) {
+            numWalls++;
+        }
+    
+        // Cell is a dead end if it has three neighboring walls
+        return numWalls == 3;
+    }
+
+    private boolean isleftDeadEnd(Cell cell) {
+        int row = cell.row;
+        int col = cell.col;
+        int numWalls = 0;
+    
+        // Count the number of neighboring walls
+        if (isValidPosition(row - 1, col) && maze[row - 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row + 1, col) && maze[row + 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col - 1) && maze[row][col - 1].type == WALL) {
+            numWalls++;
+        }
+    
+        // Cell is a dead end if it has three neighboring walls
+        return numWalls == 3;
+    }
+
+    private boolean isrightDeadEnd(Cell cell) {
+        int row = cell.row;
+        int col = cell.col;
+        int numWalls = 0;
+    
+        // Count the number of neighboring walls
+        if (isValidPosition(row - 1, col) && maze[row - 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row + 1, col) && maze[row + 1][col].type == WALL) {
+            numWalls++;
+        }
+        if (isValidPosition(row, col + 1) && maze[row][col + 1].type == WALL) {
+            numWalls++;
+        }
+    
+        // Cell is a dead end if it has three neighboring walls
+        return numWalls == 3;
     }
 
     //
