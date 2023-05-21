@@ -1,6 +1,8 @@
-package A2;
+//CPSC 331: Assignment 2
+//Names: Hassan Sohail, Mellisa Phongsa
 //This is a doubly linked list implementation of a stack
 
+package A2;
 public class DLLStack<T> {
 
     private Node<T> top = null;
