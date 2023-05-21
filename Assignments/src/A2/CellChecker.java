@@ -19,7 +19,7 @@ public class CellChecker {
         this.trialQueue = trailQueue;
     }
 
-    public void checkNeighborCell(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLQueue structure) {
+    public void checkNeighborCellQueue(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLQueue structure) {
         int row = currentCell.row + rowOffset;
         int col = currentCell.col + colOffset;
 
@@ -27,10 +27,29 @@ public class CellChecker {
             Cell neighbor = maze[row][col];
             if (!isVisited(neighbor) && isSpace(neighbor)) {
                 if (isCheese(neighbor)) {
+                    markTrail(currentCell, trailSymbol, trialQueue);
                     structure.enqueue(neighbor);
                 } else {
                     markTrail(currentCell, trailSymbol, trialQueue);
                     structure.enqueue(neighbor);
+                }
+            }
+        }
+    }
+
+    public void checkNeighborCellStack(Cell currentCell, int rowOffset, int colOffset, char trailSymbol, DLLStack structure) {
+        int row = currentCell.row + rowOffset;
+        int col = currentCell.col + colOffset;
+
+        if (isValidPosition(row, col)) {
+            Cell neighbor = maze[row][col];
+            if (!isVisited(neighbor) && isSpace(neighbor)) {
+                if (isCheese(neighbor)) {
+                    markTrail(currentCell, trailSymbol, trialQueue);
+                    structure.push(neighbor);
+                } else {
+                    markTrail(currentCell, trailSymbol, trialQueue);
+                    structure.push(neighbor);
                 }
             }
         }

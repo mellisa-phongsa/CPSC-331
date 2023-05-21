@@ -67,13 +67,15 @@ public class MazeLoader {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //print current state of maze
-    public void printMaze(Cell[][] maze, int numRows, int numCols) {
+    public void printMaze(Cell[][] maze, int numRows, int numCols, DLLQueue<Cell> trailQueue) {
         //nested for loops to iterate over each row and column
+        char[][] mazeCopy = new char[numRows][numCols];
+    
+        // Copy the original maze
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
                 //retreive cell from maze
                 Cell cell = maze[row][col];
-
                 //check the "type" property of the cell
                 if (cell.type == MOUSE) {
                     //print m
@@ -89,7 +91,6 @@ public class MazeLoader {
                     System.out.print(cell.type);
                 }
             }
-            //move to next line
             System.out.println();
         }
         System.out.println();

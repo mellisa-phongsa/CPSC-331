@@ -95,14 +95,7 @@ public class BFS {
 
             //mark currentCell as visisted
             cc.markVisited(currentCell);
-
-            //add currentCell to trailQueue
-            trailQueue.enqueue(currentCell);
-
-            //print the maze
             ml.printMaze(maze, numRows, numCols);
-
-            //check if the currentCell is cheese
             if (cc.isCheese(currentCell)) {
                 //print to terminal
                 System.out.println("Cheese (c) found!");
@@ -113,14 +106,11 @@ public class BFS {
                 //break out of the loop
                 break;
             }
-
-            //check the neighboring cells of the currentCell
-            cc.checkNeighborCell(currentCell, -1, 0, '^', structure); //up
-            cc.checkNeighborCell(currentCell, 1, 0, 'v', structure); //down
-            cc.checkNeighborCell(currentCell, 0, -1, '<', structure); //left
-            cc.checkNeighborCell(currentCell, 0, 1, '>', structure); //right
-        }
-        //if the loop completes without finding the cheese (moreToSearch is still true)
+            cc.checkNeighborCell(currentCell, -1, 0, '^', structure);
+            cc.checkNeighborCell(currentCell, 1, 0, 'v', structure);
+            cc.checkNeighborCell(currentCell, 0, -1, '<', structure);
+            cc.checkNeighborCell(currentCell, 0, 1, '>', structure);
+        } //end
         if (moreToSearch) {
             //print to terminal
             System.out.println("Cheese (c) not reachable!");
