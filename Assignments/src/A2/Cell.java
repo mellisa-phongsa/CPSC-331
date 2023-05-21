@@ -1,6 +1,6 @@
 //CPSC 331: Assignment 2
 //Names: Hassan Sohail, Mellisa Phongsa
-//creates a cell with in the maze
+//cell within the maze
 
 package A2;
 public class Cell {
