@@ -54,6 +54,7 @@ public class BFS {
         //initialize starting cell to be null and moretosearch to true
         Cell startCell = null;
         boolean moreToSearch = true;
+        int counter = 0;
 
         //iterate through each row and column
         for (int row = 0; row < numRows; row++) {
@@ -95,14 +96,7 @@ public class BFS {
 
             //mark currentCell as visisted
             cc.markVisited(currentCell);
-
-            //add currentCell to trailQueue
-            trailQueue.enqueue(currentCell);
-
-            //print the maze
-            ml.printMaze(maze, numRows, numCols);
-
-            //check if the currentCell is cheese
+            ml.printMaze(maze, numRows, numCols,trailQueue);
             if (cc.isCheese(currentCell)) {
                 //print to terminal
                 System.out.println("Cheese (c) found!");
@@ -113,18 +107,17 @@ public class BFS {
                 //break out of the loop
                 break;
             }
-
-            //check the neighboring cells of the currentCell
-            cc.checkNeighborCell(currentCell, -1, 0, '^', structure); //up
-            cc.checkNeighborCell(currentCell, 1, 0, 'v', structure); //down
-            cc.checkNeighborCell(currentCell, 0, -1, '<', structure); //left
-            cc.checkNeighborCell(currentCell, 0, 1, '>', structure); //right
-        }
-        //if the loop completes without finding the cheese (moreToSearch is still true)
+            cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure);
+            cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure);
+            counter++;
+        } //end
         if (moreToSearch) {
             //print to terminal
             System.out.println("Cheese (c) not reachable!");
         }
+        System.out.println("The mouse moved " + (counter) + " number of times");
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end
 
