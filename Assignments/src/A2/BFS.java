@@ -95,7 +95,7 @@ public class BFS {
 
             //mark currentCell as visisted
             cc.markVisited(currentCell);
-            ml.printMaze(maze, numRows, numCols);
+            ml.printMaze(maze, numRows, numCols,trailQueue);
             if (cc.isCheese(currentCell)) {
                 //print to terminal
                 System.out.println("Cheese (c) found!");
@@ -106,10 +106,10 @@ public class BFS {
                 //break out of the loop
                 break;
             }
-            cc.checkNeighborCell(currentCell, -1, 0, '^', structure);
-            cc.checkNeighborCell(currentCell, 1, 0, 'v', structure);
-            cc.checkNeighborCell(currentCell, 0, -1, '<', structure);
-            cc.checkNeighborCell(currentCell, 0, 1, '>', structure);
+            cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure);
+            cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure);
         } //end
         if (moreToSearch) {
             //print to terminal
