@@ -74,22 +74,20 @@ public class MazeLoader {
         // Copy the original maze
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
-                //retreive cell from maze
-                Cell cell = maze[row][col];
-                //check the "type" property of the cell
-                if (cell.type == MOUSE) {
-                    //print m
-                    System.out.print('m');
-                } else if (cell.type == CHEESE) {
-                    //print c
-                    System.out.print('c');
-                } else if (cell.visited) {
-                    //print . if cell has been visited
-                    System.out.print('.');
-                } else {
-                    //print 0 or 1
-                    System.out.print(cell.type);
-                }
+                mazeCopy[row][col] = maze[row][col].type;
+            }
+        }
+    
+        // Update the maze with trail movements
+        while (!trailQueue.isEmpty()) {
+            Cell cell = trailQueue.dequeue();
+            mazeCopy[cell.row][cell.col] = cell.type;
+        }
+    
+        // Print the updated maze
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                System.out.print(mazeCopy[row][col]);
             }
             System.out.println();
         }

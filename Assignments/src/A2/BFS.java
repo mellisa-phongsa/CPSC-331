@@ -54,6 +54,7 @@ public class BFS {
         //initialize starting cell to be null and moretosearch to true
         Cell startCell = null;
         boolean moreToSearch = true;
+        int counter = 0;
 
         //iterate through each row and column
         for (int row = 0; row < numRows; row++) {
@@ -110,18 +111,20 @@ public class BFS {
             cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure);
             cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure);
             cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure);
+            counter++;
         } //end
         if (moreToSearch) {
             //print to terminal
             System.out.println("Cheese (c) not reachable!");
         }
+        System.out.println("The mouse moved " + (counter) + " number of times");
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Start main method
     public static void main(String[] args) {
         //pass filename into constructor
-        BFS bfs = new BFS("Maze.txt");
+        BFS bfs = new BFS("/Users/hassan/Desktop/CPSC-331/Assignments/src/Maze.txt");
 
         //call solveMaze method
         bfs.solveMaze();

@@ -39,6 +39,7 @@ public class DFS {
     public void solveMaze() {
         Cell startCell = null;
         boolean moreToSearch = true;
+        int counter = 0;
         for (int row = 0; row < numRows; row++) { //start
 
             for (int col = 0; col < numCols; col++){ //start
@@ -78,14 +79,16 @@ public class DFS {
             cc.checkNeighborCellStack(currentCell, 1, 0, 'v', structure);
             cc.checkNeighborCellStack(currentCell, 0, -1, '<', structure);
             cc.checkNeighborCellStack(currentCell, 0, 1, '>', structure);
+            counter++;
         } //end
         if (moreToSearch) {
             System.out.println("Cheese (c) not reachable!");
         }
+        System.out.println("The mouse moved " + (counter) + " number of times");
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public static void main(String[] args) {
-    DFS dfs = new DFS("Maze.txt");
+    DFS dfs = new DFS("/Users/hassan/Desktop/CPSC-331/Assignments/src/A2/Maze1.txt");
     dfs.solveMaze();
     MazeLoader ml = new MazeLoader();
     ml.saveTrailToFile("trail.txt", dfs.trailQueue);
