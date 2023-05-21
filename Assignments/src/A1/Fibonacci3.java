@@ -1,3 +1,4 @@
+package A1;
 //Cpsc 331 Assignment 1 - Algorithm 3
 //the following algorithm computes the nth fibonacci number recursively based on linear difference equations
 
@@ -24,7 +25,7 @@ public class Fibonacci3 {
             FileWriter fw = new FileWriter("fibonacci3.txt", false);
 
             //calculate first 5000 fibonacci numbers (i = 3 to i = 4999)
-            for (int i = 3; i < MAX; i++){
+            for (int i = 0; i < MAX; i++){
 
                 //start system clock
                 start = System.nanoTime();
@@ -65,7 +66,7 @@ public class Fibonacci3 {
         }
 
         //if nth fib number is not = to zero return f[n]
-        if (f[n] != BigInteger.ZERO){
+        if (f[n] != null){
             return f[n];
         } 
 

@@ -1,0 +1,108 @@
+Fibonacci(0) = 0
+Time taken: 418700 nanoseconds
+Fibonacci(1) = 1
+Time taken: 1100 nanoseconds
+Fibonacci(2) = 1
+Time taken: 2200 nanoseconds
+Fibonacci(3) = 2
+Time taken: 2500 nanoseconds
+Fibonacci(4) = 3
+Time taken: 1800 nanoseconds
+Fibonacci(5) = 5
+Time taken: 1900 nanoseconds
+Fibonacci(6) = 8
+Time taken: 2600 nanoseconds
+Fibonacci(7) = 13
+Time taken: 7200 nanoseconds
+Fibonacci(8) = 21
+Time taken: 7500 nanoseconds
+Fibonacci(9) = 34
+Time taken: 10600 nanoseconds
+Fibonacci(10) = 55
+Time taken: 24600 nanoseconds
+Fibonacci(11) = 89
+Time taken: 40900 nanoseconds
+Fibonacci(12) = 144
+Time taken: 66400 nanoseconds
+Fibonacci(13) = 233
+Time taken: 89700 nanoseconds
+Fibonacci(14) = 377
+Time taken: 120400 nanoseconds
+Fibonacci(15) = 610
+Time taken: 128200 nanoseconds
+Fibonacci(16) = 987
+Time taken: 216900 nanoseconds
+Fibonacci(17) = 1597
+Time taken: 235100 nanoseconds
+Fibonacci(18) = 2584
+Time taken: 231200 nanoseconds
+Fibonacci(19) = 4181
+Time taken: 176000 nanoseconds
+Fibonacci(20) = 6765
+Time taken: 269700 nanoseconds
+Fibonacci(21) = 10946
+Time taken: 389600 nanoseconds
+Fibonacci(22) = 17711
+Time taken: 896600 nanoseconds
+Fibonacci(23) = 28657
+Time taken: 1389600 nanoseconds
+Fibonacci(24) = 46368
+Time taken: 1978700 nanoseconds
+Fibonacci(25) = 75025
+Time taken: 2788700 nanoseconds
+Fibonacci(26) = 121393
+Time taken: 4293500 nanoseconds
+Fibonacci(27) = 196418
+Time taken: 7397400 nanoseconds
+Fibonacci(28) = 317811
+Time taken: 11248800 nanoseconds
+Fibonacci(29) = 514229
+Time taken: 13769600 nanoseconds
+Fibonacci(30) = 832040
+Time taken: 15722500 nanoseconds
+Fibonacci(31) = 1346269
+Time taken: 30630400 nanoseconds
+Fibonacci(32) = 2178309
+Time taken: 48166300 nanoseconds
+Fibonacci(33) = 3524578
+Time taken: 78255100 nanoseconds
+Fibonacci(34) = 5702887
+Time taken: 117823500 nanoseconds
+Fibonacci(35) = 9227465
+Time taken: 232292700 nanoseconds
+Fibonacci(36) = 14930352
+Time taken: 266507200 nanoseconds
+Fibonacci(37) = 24157817
+Time taken: 410440400 nanoseconds
+Fibonacci(38) = 39088169
+Time taken: 667903800 nanoseconds
+Fibonacci(39) = 63245986
+Time taken: 1062398100 nanoseconds
+Fibonacci(40) = 102334155
+Time taken: 1713066700 nanoseconds
+Fibonacci(41) = 165580141
+Time taken: 2772646600 nanoseconds
+Fibonacci(42) = 267914296
+Time taken: 4488101600 nanoseconds
+Fibonacci(43) = 433494437
+Time taken: 7245014800 nanoseconds
+Fibonacci(44) = 701408733
+Time taken: 11701673300 nanoseconds
+Fibonacci(45) = 1134903170
+Time taken: 18951062200 nanoseconds
+Fibonacci(46) = 1836311903
+Time taken: 30693502100 nanoseconds
+Fibonacci(47) = 2971215073
+Time taken: 49524723900 nanoseconds
+Fibonacci(48) = 4807526976
+Time taken: 80363632400 nanoseconds
+Fibonacci(49) = 7778742049
+Time taken: 132272721000 nanoseconds
+Fibonacci(50) = 12586269025
+Time taken: 220400177900 nanoseconds
+Fibonacci(51) = 20365011074
+Time taken: 373946400000 nanoseconds
+Fibonacci(52) = 32951280099
+Time taken: 602781564700 nanoseconds
+Fibonacci(53) = 53316291173
+Time taken: 974914616600 nanoseconds

@@ -1,0 +1,108 @@
+Fibonacci(0) = 0
+Time taken: 1000 nanoseconds
+Fibonacci(1) = 1
+Time taken: 200 nanoseconds
+Fibonacci(2) = 1
+Time taken: 300 nanoseconds
+Fibonacci(3) = 2
+Time taken: 13000 nanoseconds
+Fibonacci(4) = 3
+Time taken: 5400 nanoseconds
+Fibonacci(5) = 5
+Time taken: 3000 nanoseconds
+Fibonacci(6) = 8
+Time taken: 3100 nanoseconds
+Fibonacci(7) = 13
+Time taken: 4600 nanoseconds
+Fibonacci(8) = 21
+Time taken: 4000 nanoseconds
+Fibonacci(9) = 34
+Time taken: 2700 nanoseconds
+Fibonacci(10) = 55
+Time taken: 5000 nanoseconds
+Fibonacci(11) = 89
+Time taken: 3000 nanoseconds
+Fibonacci(12) = 144
+Time taken: 2800 nanoseconds
+Fibonacci(13) = 233
+Time taken: 2800 nanoseconds
+Fibonacci(14) = 377
+Time taken: 3600 nanoseconds
+Fibonacci(15) = 610
+Time taken: 2800 nanoseconds
+Fibonacci(16) = 987
+Time taken: 3300 nanoseconds
+Fibonacci(17) = 1597
+Time taken: 2700 nanoseconds
+Fibonacci(18) = 2584
+Time taken: 3300 nanoseconds
+Fibonacci(19) = 4181
+Time taken: 2500 nanoseconds
+Fibonacci(20) = 6765
+Time taken: 3000 nanoseconds
+Fibonacci(21) = 10946
+Time taken: 2700 nanoseconds
+Fibonacci(22) = 17711
+Time taken: 3200 nanoseconds
+Fibonacci(23) = 28657
+Time taken: 2500 nanoseconds
+Fibonacci(24) = 46368
+Time taken: 3300 nanoseconds
+Fibonacci(25) = 75025
+Time taken: 2600 nanoseconds
+Fibonacci(26) = 121393
+Time taken: 4900 nanoseconds
+Fibonacci(27) = 196418
+Time taken: 2900 nanoseconds
+Fibonacci(28) = 317811
+Time taken: 3400 nanoseconds
+Fibonacci(29) = 514229
+Time taken: 2600 nanoseconds
+Fibonacci(30) = 832040
+Time taken: 4600 nanoseconds
+Fibonacci(31) = 1346269
+Time taken: 2600 nanoseconds
+Fibonacci(32) = 2178309
+Time taken: 2900 nanoseconds
+Fibonacci(33) = 3524578
+Time taken: 3200 nanoseconds
+Fibonacci(34) = 5702887
+Time taken: 3300 nanoseconds
+Fibonacci(35) = 9227465
+Time taken: 2500 nanoseconds
+Fibonacci(36) = 14930352
+Time taken: 3300 nanoseconds
+Fibonacci(37) = 24157817
+Time taken: 2700 nanoseconds
+Fibonacci(38) = 39088169
+Time taken: 3200 nanoseconds
+Fibonacci(39) = 63245986
+Time taken: 2700 nanoseconds
+Fibonacci(40) = 102334155
+Time taken: 3300 nanoseconds
+Fibonacci(41) = 165580141
+Time taken: 2500 nanoseconds
+Fibonacci(42) = 267914296
+Time taken: 3000 nanoseconds
+Fibonacci(43) = 433494437
+Time taken: 2500 nanoseconds
+Fibonacci(44) = 701408733
+Time taken: 3000 nanoseconds
+Fibonacci(45) = 1134903170
+Time taken: 2400 nanoseconds
+Fibonacci(46) = 1836311903
+Time taken: 3300 nanoseconds
+Fibonacci(47) = 2971215073
+Time taken: 2500 nanoseconds
+Fibonacci(48) = 4807526976
+Time taken: 2800 nanoseconds
+Fibonacci(49) = 7778742049
+Time taken: 2600 nanoseconds
+Fibonacci(50) = 12586269025
+Time taken: 2900 nanoseconds
+Fibonacci(51) = 20365011074
+Time taken: 2400 nanoseconds
+Fibonacci(52) = 32951280099
+Time taken: 3000 nanoseconds
+Fibonacci(53) = 53316291173
+Time taken: 2200 nanoseconds
