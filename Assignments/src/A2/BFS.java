@@ -53,7 +53,6 @@ public class BFS {
         //initialize starting cell to be null and moretosearch to true
         Cell startCell = null;
         boolean moreToSearch = true;
-        int counter = 0;
 
         //iterate through each row and column
         for (int row = 0; row < numRows; row++) {
@@ -95,6 +94,7 @@ public class BFS {
 
             //mark currentCell as visisted
             cc.markVisited(currentCell);
+            trailQueue.enqueue(currentCell);
             ml.printMaze(maze, numRows, numCols,trailQueue);
             if (cc.isCheese(currentCell)) {
                 //print to terminal
@@ -106,6 +106,7 @@ public class BFS {
                 //break out of the loop
                 break;
             }
+<<<<<<< HEAD
             //check neighboring cells 
             cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure); //up
             cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure); //down
@@ -114,28 +115,39 @@ public class BFS {
             counter++;
         }
         //if cheese has not been found
+=======
+            cc.checkNeighborCellQueue(currentCell, -1, 0, '^', structure);
+            cc.checkNeighborCellQueue(currentCell, 1, 0, 'v', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, -1, '<', structure);
+            cc.checkNeighborCellQueue(currentCell, 0, 1, '>', structure);
+        } //end
+>>>>>>> 35abcbd (Fixed stuff with trailqueue)
         if (moreToSearch) {
             //print to terminal
             System.out.println("Cheese (c) not reachable!");
         }
+<<<<<<< HEAD
         //print to terminal
         System.out.println("The mouse moved " + (counter) + " number of times");
+=======
+>>>>>>> 35abcbd (Fixed stuff with trailqueue)
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Start main method
     public static void main(String[] args) {
-        //pass filename into constructor
-        BFS bfs = new BFS("Maze.txt");
-
-        //call solveMaze method
-        bfs.solveMaze();
-
-        //instantiate MazeLoader class
-        MazeLoader ml = new MazeLoader();
-
-        //save trail to output file
-        ml.saveTrailToFile("trail.txt", bfs.trailQueue);
+    BFS bfs = new BFS("Maze.txt");
+    bfs.solveMaze();
+    int length = 0;
+    System.out.println("Breadth First Search");
+    while (!bfs.trailQueue.isEmpty()){
+        Cell cell = bfs.trailQueue.dequeue();
+        length++;
+        System.out.print("(" + cell.row + "," + cell.col + ") ");
+    }
+    System.out.println();
+    System.out.println("The mouse moved " + length + " Times.");
+        
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end
 

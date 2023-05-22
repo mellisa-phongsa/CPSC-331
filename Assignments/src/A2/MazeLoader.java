@@ -5,6 +5,8 @@
 package A2;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -66,18 +68,12 @@ public class MazeLoader {
     public void printMaze(Cell[][] maze, int numRows, int numCols, DLLQueue<Cell> trailQueue) {
         //nested for loops to iterate over each row and column
         char[][] mazeCopy = new char[numRows][numCols];
-    
+        
         // Copy the original maze
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
                 mazeCopy[row][col] = maze[row][col].type;
             }
-        }
-    
-        // Update the maze with trail movements
-        while (!trailQueue.isEmpty()) {
-            Cell cell = trailQueue.dequeue();
-            mazeCopy[cell.row][cell.col] = cell.type;
         }
     
         // Print the updated maze
@@ -89,23 +85,63 @@ public class MazeLoader {
         }
         System.out.println();
     }
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// end
+=======
+
+    public void printMazeToFile(Cell[][] maze, int numRows, int numCols, DLLQueue<Cell> trailQueue, String fileName) {
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            char[][] mazeCopy = new char[numRows][numCols];
+    
+            // Copy the original maze
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numCols; col++) {
+                    mazeCopy[row][col] = maze[row][col].type;
+                }
+            }
+    
+            // Print the updated maze with the trail path to the file
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numCols; col++) {
+                    fileWriter.write(mazeCopy[row][col]);
+                }
+                fileWriter.write('\n');
+            }
+            fileWriter.write('\n');
+            fileWriter.flush();
+        }  catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+        
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 35abcbd (Fixed stuff with trailqueue)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// start saveTRailToFile
     //saves path travelled by the mouse in queue "trailQueue"
-    public void saveTrailToFile(String filePath, DLLQueue<Cell> trailQueue) {
+    public void saveTrailToFile(String filePath, DLLQueue<Cell> trailQueue, Cell[][] maze, int numRows, int numCols) {
         //write to file
         try (PrintWriter writer = new PrintWriter(filePath)) {
-            //looop until trailQueue is empty
-            while (!trailQueue.isEmpty()) {
-                //dequeue cell from queue and save in variable
-                Cell cell = trailQueue.dequeue();
+            char[][] mazeCopy = new char[numRows][numCols];
 
-                //write to file
-                writer.println(cell.row + "," + cell.col + "," + cell.type);
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numCols; col++) {
+                    mazeCopy[row][col] = maze[row][col].type;
+                }
             }
+            
+
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numCols; col++) {
+                    writer.println(mazeCopy[row][col]);
+                }
+                writer.println('\n');
+            }
+            writer.println('\n');
+            writer.flush();
+           
         } catch (FileNotFoundException e) {
-            //print to terminal if cant write to file
             System.out.println("Error saving trail to file: " + e.getMessage());
         }
     }
