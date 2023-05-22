@@ -90,61 +90,6 @@ public class MazeLoader {
         System.out.println();
     }
 
-    public void printMazeToFile(Cell[][] maze, int numRows, int numCols, DLLQueue<Cell> trailQueue, String fileName) {
-        try (FileWriter fileWriter = new FileWriter(fileName)) {
-            char[][] mazeCopy = new char[numRows][numCols];
-    
-            // Copy the original maze
-            for (int row = 0; row < numRows; row++) {
-                for (int col = 0; col < numCols; col++) {
-                    mazeCopy[row][col] = maze[row][col].type;
-                }
-            }
-    
-            // Print the updated maze with the trail path to the file
-            for (int row = 0; row < numRows; row++) {
-                for (int col = 0; col < numCols; col++) {
-                    fileWriter.write(mazeCopy[row][col]);
-                }
-                fileWriter.write('\n');
-            }
-            fileWriter.write('\n');
-            fileWriter.flush();
-        }  catch (IOException e) {
-            System.out.println("Error writing to file: " + e.getMessage());
-        }
-        
-    }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //saves path travelled by the mouse in queue "trailQueue"
-    public void saveTrailToFile(String filePath, DLLQueue<Cell> trailQueue, Cell[][] maze, int numRows, int numCols) {
-        //write to file
-        try (PrintWriter writer = new PrintWriter(filePath)) {
-            char[][] mazeCopy = new char[numRows][numCols];
-
-            for (int row = 0; row < numRows; row++) {
-                for (int col = 0; col < numCols; col++) {
-                    mazeCopy[row][col] = maze[row][col].type;
-                }
-            }
-            
-
-            for (int row = 0; row < numRows; row++) {
-                for (int col = 0; col < numCols; col++) {
-                    writer.println(mazeCopy[row][col]);
-                }
-                writer.println('\n');
-            }
-            writer.println('\n');
-            writer.flush();
-           
-        } catch (FileNotFoundException e) {
-            System.out.println("Error saving trail to file: " + e.getMessage());
-        }
-    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
