@@ -63,7 +63,7 @@ public class BST<T extends Comparable> implements BSTInterface<T>
         if (root == null) return 0;
         else return recursiveSize(root.getLeft()) + recursiveSize(root.getRight()) + 1;
     }
-    
+
     /**
      * Precondition: None
      * Postcondition: deletes all the elements in the BST and resests it to the initial condition
@@ -254,6 +254,109 @@ public class BST<T extends Comparable> implements BSTInterface<T>
         }
         
     }
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns the height of the tree
+     * the method contains and recursiveContains was used as reference
+     */
+    public int height() {
+        //call recursive method, starting at the root of the tree
+        return recursiveHeight(root);
+    }
+    private int recursiveHeight(Node<T> node) {
+        //if the tree is empty, or if there are no left or right children
+        if (node == null) {
+            //height of empty tree is 0
+            return 0;
+        }  
+        //calculate the height of the left subtree
+        int leftHeight = recursiveHeight(node.getLeft());
+        //calculate the height of the right subtree
+        int rightHeight = recursiveHeight(node.getRight());            
+        //return the maximum height of the subtrees and add 1 to account for the current level
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns a reference to the parent of a node containing value
+     */
+    public Node<T> parent(T value) {
+        //if the value is not in the tree immediately return null
+        if (!contains(value)) {
+            return null;
+        } else {
+            //if the value is found in the tree call the recursive method
+            return recursiveParent(value, root);
+        }
+    }
+    private Node<T> recursiveParent(T value, Node<T> currentNode) {
+        //check if value is in the left subtree
+        if (value.compareTo(currentNode.getValue()) < 0) {
+            //recursive call
+            return recursiveParent(value, currentNode.getLeft());
+        //check if value is in the right subtree
+        }else if (value.compareTo(currentNode.getValue()) > 0) {
+            //recursive call
+            return recursiveParent(value, currentNode.getRight());
+        }else { //found the value
+            //return the parent of the node containing the value
+            return currentNode.getParent();
+        }
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns the level of the node containing value. If there is more than one node with the same value, it returns the highest level
+     */
+    //public int level(T value) {
+
+    //}
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns true if the tree is complete; must call a recursive method recIsComplete(root, index)
+     */
+    //public boolean isComplete() {
+    
+    //}
+    //private boolean recIsComplete(Node<T> root, int index) {
+
+    //}
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns true if the tree is perfect
+     */
+    //public boolean isPerfect() {
+
+    //}
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * added method
+     * names: Mellisa Phongsa, Hassan Sohail
+     * returns true if the tree has duplicate values
+     */
+    //public boolean hasDoubles() {
+
+    //}
+//////////////////////////////////////////////////////////////////////////////////////////////
     
 }
 
