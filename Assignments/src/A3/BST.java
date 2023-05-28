@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 /**
  * Implementation of a BST using linking
@@ -260,23 +261,20 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * names: Mellisa Phongsa, Hassan Sohail
      * returns the height of the tree
      * the method contains and recursiveContains was used as reference
+     * @param root2
      */
     public int height() {
-        //call recursive method, starting at the root of the tree
         return recursiveHeight(root);
     }
+    
     private int recursiveHeight(Node<T> node) {
-        //if the tree is empty, or if there are no left or right children
         if (node == null) {
-            //height of empty tree is 0
-            return 0;
-        }  
-        //calculate the height of the left subtree
-        int leftHeight = recursiveHeight(node.getLeft());
-        //calculate the height of the right subtree
-        int rightHeight = recursiveHeight(node.getRight());            
-        //return the maximum height of the subtrees and add 1 to account for the current level
-        return Math.max(leftHeight, rightHeight) + 1;
+            return -1; // Height of an empty tree is -1
+        } else {
+            int leftHeight = recursiveHeight(node.getLeft());
+            int rightHeight = recursiveHeight(node.getRight());
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -287,26 +285,18 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns a reference to the parent of a node containing value
      */
     public Node<T> parent(T value) {
-        //if the value is not in the tree immediately return null
-        if (!contains(value)) {
-            return null;
-        } else {
-            //if the value is found in the tree call the recursive method
-            return recursiveParent(value, root);
-        }
+        return recursiveParent(value, root, null);
     }
-    private Node<T> recursiveParent(T value, Node<T> currentNode) {
-        //check if value is in the left subtree
-        if (value.compareTo(currentNode.getValue()) < 0) {
-            //recursive call
-            return recursiveParent(value, currentNode.getLeft());
-        //check if value is in the right subtree
-        }else if (value.compareTo(currentNode.getValue()) > 0) {
-            //recursive call
-            return recursiveParent(value, currentNode.getRight());
-        }else { //found the value
-            //return the parent of the node containing the value
-            return currentNode.getParent();
+    
+    private Node<T> recursiveParent(T value, Node<T> current, Node<T> parent) {
+        if (current == null) {
+            return null; // Value not found in the tree
+        } else if (value.compareTo(current.getValue()) == 0) {
+            return parent; // Found the node containing the value, return its parent
+        } else if (value.compareTo(current.getValue()) < 0) {
+            return recursiveParent(value, current.getLeft(), current); // Search in the left subtree
+        } else {
+            return recursiveParent(value, current.getRight(), current); // Search in the right subtree
         }
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -317,9 +307,21 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * names: Mellisa Phongsa, Hassan Sohail
      * returns the level of the node containing value. If there is more than one node with the same value, it returns the highest level
      */
-    //public int level(T value) {
-
-    //}
+    public int level(T value) {
+        return recursiveLevel(value, root, 0);
+    }
+    
+    private int recursiveLevel(T value, Node<T> current, int level) {
+        if (current == null) {
+            return -1; // Value not found in the tree
+        } else if (value.compareTo(current.getValue()) == 0) {
+            return level; // Found the node containing the value, return its level
+        } else if (value.compareTo(current.getValue()) < 0) {
+            return recursiveLevel(value, current.getLeft(), level + 1); // Search in the left subtree, increment level
+        } else {
+            return recursiveLevel(value, current.getRight(), level + 1); // Search in the right subtree, increment level
+        }
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,12 +330,23 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * names: Mellisa Phongsa, Hassan Sohail
      * returns true if the tree is complete; must call a recursive method recIsComplete(root, index)
      */
-    //public boolean isComplete() {
+    public boolean isComplete() {
+        int index = 0;
+        return recIsComplete(root, index, size());
+    }
     
-    //}
-    //private boolean recIsComplete(Node<T> root, int index) {
-
-    //}
+    private boolean recIsComplete(Node<T> node, int index, int size) {
+        if (node == null) {
+            return true; // Empty subtree is complete
+        }
+        
+        if (index >= size) {
+            return false; // Index of node exceeds the number of nodes in the tree
+        }
+        
+        return recIsComplete(node.getLeft(), 2 * index + 1, size) &&
+               recIsComplete(node.getRight(), 2 * index + 2, size);
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -342,9 +355,17 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * names: Mellisa Phongsa, Hassan Sohail
      * returns true if the tree is perfect
      */
-    //public boolean isPerfect() {
-
-    //}
+    public boolean isPerfect() {
+        // calculate the height of the tree
+        int treeHeight = height();
+        // calculate the number of nodes in the tree using size
+        int nodeCount = size();
+        // calculated the expected number of nodes of a perfect tree which is 2^(h+1)-1 and saving this to expected nodes
+        int expectedNodeCount = (int) Math.pow(2, treeHeight + 1) - 1;
+        
+        // comparing the actual nodecount with the expected nodecount, if they are equal the tree is perfect, if not then the tree is not perfect.
+        return nodeCount == expectedNodeCount;
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -353,10 +374,63 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * names: Mellisa Phongsa, Hassan Sohail
      * returns true if the tree has duplicate values
      */
-    //public boolean hasDoubles() {
-
-    //}
+    public boolean hasDoubles() {
+        HashSet<T> set = new HashSet<>();
+        return recHasDoubles(root, set);
+    }
+    
+    private boolean recHasDoubles(Node<T> node, HashSet<T> set) {
+        if (node == null) {
+            return false;
+        }
+        
+        if (set.contains(node.getValue())) {
+            return true; // Found a duplicate value
+        }
+        
+        set.add(node.getValue());
+        
+        return recHasDoubles(node.getLeft(), set) || recHasDoubles(node.getRight(), set);
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+public static void main(String[] args) {
+    BST<Integer> binaryst = new BST<>();
+    binaryst.add(25);
+    binaryst.add(15);
+    binaryst.add(50);
+    binaryst.add(10);
+    binaryst.add(22);
+    binaryst.add(35);
+    binaryst.add(70);
+    binaryst.add(4);
+    binaryst.add(12);
+    binaryst.add(18);
+    binaryst.add(24);
+    binaryst.add(31);
+    binaryst.add(44);
+    binaryst.add(66);
+    binaryst.add(90);
+    
+
+    binaryst.printBST(PREORDER);
+    Node<Integer> root = binaryst.getRoot();
+    int heightbst = binaryst.height();
+    boolean perfect = binaryst.isPerfect();
+    boolean complete = binaryst.isComplete();
+    boolean doubles = binaryst.hasDoubles();
+    int value = 50;
+    Node<Integer> p = binaryst.parent(value);
+    int i = binaryst.level(value);
+    System.out.println("Height: " + heightbst);
+    System.out.println("Is Perfect: " + perfect);
+    System.out.println("Is Complete: " + complete);
+    System.out.println("Has Doubles; " + doubles);
+    System.out.println("Root is: "  + root.getValue());
+    System.out.println("The parent of " + value + " is " + p.getValue());
+    System.out.println("The level of the value " + value + " is " + i);
+
+}
     
 }
 
