@@ -285,7 +285,12 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns a reference to the parent of a node containing value
      */
     public Node<T> parent(T value) {
-        return recursiveParent(value, root, null);
+        if (!contains(value)){
+            return null;
+        } else {
+            return recursiveParent(value, root, null);
+        }
+        
     }
     
     private Node<T> recursiveParent(T value, Node<T> current, Node<T> parent) {
@@ -308,7 +313,11 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns the level of the node containing value. If there is more than one node with the same value, it returns the highest level
      */
     public int level(T value) {
-        return recursiveLevel(value, root, 0);
+        if (!contains(value)){
+            return -1;
+        } else {
+            return recursiveLevel(value, root, 0);
+        }
     }
     
     private int recursiveLevel(T value, Node<T> current, int level) {

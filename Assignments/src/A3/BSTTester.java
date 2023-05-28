@@ -26,7 +26,7 @@ public class BSTTester
         if (t.contains(12)) System.out.println("12 is in the tree");
         else System.out.println("12 is in not the tree");
         
-        if (t.contains(8)) System.out.println("12 is in the tree");
+        if (t.contains(8)) System.out.println("8 is in the tree");
         else System.out.println("8 is in not the tree");
         
         System.out.println("The tree has " + t.size() + " elements");
