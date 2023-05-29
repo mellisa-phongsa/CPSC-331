@@ -89,15 +89,17 @@ public class Main {
 
                 //clear tree after each iteration
                 t.clear();
-            } 
-        } catch (IOException e) {
-            //if there is an error writing to file print error message
-            System.out.println("Error writing to file: " + e.getMessage());
-        }
+            }
         // Variable for average height of the tree
         int averageheight = totalheight/100;
 
         // Printing the average height of the trees
         System.out.println("The average height of the 100 trees of size " + treeSize + " is " + averageheight);
+        pw.println("The average height of the 100 trees of size " + treeSize + " is " + averageheight);
+
+        } catch (IOException e) {
+            //if there is an error writing to file print error message
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
     }
 }
