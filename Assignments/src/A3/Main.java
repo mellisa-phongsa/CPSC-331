@@ -25,8 +25,6 @@ public class Main {
                 //print number tree created
                 System.out.println("\nTree #" + numTree);
 
-                
-
                 //generate a tree with size, treeSize
                 for (int i = 0; i < treeSize; i++){
                     //add randomly generated values
@@ -38,7 +36,7 @@ public class Main {
                 t.printBST(BST.INORDER); 
                 t.printBST(BST.PREORDER);
                 t.printBST(BST.POSTORDER);
-                
+
                 //create variables
                 Node<Integer> root = t.getRoot();
                 int heightbst = t.height();
@@ -51,6 +49,29 @@ public class Main {
                 System.out.println("Perfect: " + perfect); //print is tree perfect
                 System.out.println("Complete: " + complete); //print is tree complete
                 System.out.println("Doubles: " + doubles); //print tree has doubles
+
+                //randomly generate a value
+                int value = rnd.nextInt(100);
+                //var to store the level the value was found in
+                int i = t.level(value);
+
+                System.out.println("Value: " + value);
+
+                //if the value is not found in the tree print msg
+                if(!t.contains(value)) {
+                    System.out.println(value + " was not found in the tree");
+                //if the value is stored in the root print msg
+                } else if (t.parent(value) == null) {
+                    //the root does not have a parent
+                    System.out.println(value + " has no parent because it is the root of the tree");
+                    System.out.println("The level of the value " + value + " is " + i);
+                } else {
+                    //get parent of the value
+                    Node<Integer> p = t.parent(value);
+                    //print to terminal
+                    System.out.println("The parent of " + value + " is " + p.getValue());
+                    System.out.println("The level of the value " + value + " is " + i);
+                }
 
                 //print to file
                 pw.println("Tree #" + numTree); //tree number
@@ -66,29 +87,6 @@ public class Main {
         } catch (IOException e) {
             //if there is an error writing to file print error message
             System.out.println("Error writing to file: " + e.getMessage());
-        }
-
-        //ask user for value inside tree
-        System.out.print("enter a value in tree #100: ");
-        int value = scanner.nextInt();
-        scanner.close();
-
-        //var to store the level the value was found in
-        int i = t.level(value);
-        //if the value is not found in the tree print msg
-        if(!t.contains(value)) {
-            System.out.println(value + " was not found in the tree");
-        //if the value is stored in the root print msg
-        } else if (t.parent(value) == null) {
-            //the root does not have a parent
-            System.out.println(value + " has no parent because it is the root of the tree");
-            System.out.println("The level of the value " + value + " is " + i);
-        } else {
-            //get parent of the value
-            Node<Integer> p = t.parent(value);
-            //print to terminal
-            System.out.println("The parent of " + value + " is " + p.getValue());
-            System.out.println("The level of the value " + value + " is " + i);
         }
     }
 }
