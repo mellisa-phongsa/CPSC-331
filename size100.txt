@@ -1,0 +1,600 @@
+Tree #1
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #2
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #3
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #4
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #5
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #6
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #7
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #8
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #9
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #10
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #11
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #12
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #13
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #14
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #15
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #16
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #17
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #18
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #19
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #20
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #21
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #22
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #23
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #24
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #25
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #26
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #27
+Height: 16
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #28
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #29
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #30
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #31
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #32
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #33
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #34
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #35
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #36
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #37
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #38
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #39
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #40
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #41
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #42
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #43
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #44
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #45
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #46
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #47
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #48
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #49
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #50
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #51
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #52
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #53
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #54
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #55
+Height: 16
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #56
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #57
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #58
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #59
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #60
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #61
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #62
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #63
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #64
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #65
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #66
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #67
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #68
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #69
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #70
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #71
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #72
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #73
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #74
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #75
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #76
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #77
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #78
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #79
+Height: 17
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #80
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #81
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #82
+Height: 10
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #83
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #84
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #85
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #86
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #87
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #88
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #89
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #90
+Height: 15
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #91
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #92
+Height: 13
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #93
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #94
+Height: 14
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #95
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #96
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #97
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #98
+Height: 11
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #99
+Height: 9
+Perfect: false
+Complete: false
+Doubles: true
+
+Tree #100
+Height: 12
+Perfect: false
+Complete: false
+Doubles: true
+
