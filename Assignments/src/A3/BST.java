@@ -264,17 +264,19 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * @param root2
      */
     public int height() {
+        //call recursive method to find height of the tree starting at the root 
         return recursiveHeight(root);
     }
-    
     private int recursiveHeight(Node<T> node) {
         if (node == null) {
             return -1; // Height of an empty tree is -1
-        } else {
-            int leftHeight = recursiveHeight(node.getLeft());
-            int rightHeight = recursiveHeight(node.getRight());
-            return Math.max(leftHeight, rightHeight) + 1;
         }
+        //find height of the left subtree, recursive call
+        int leftHeight = recursiveHeight(node.getLeft());
+        //find height of right subtree, recursive call
+        int rightHeight = recursiveHeight(node.getRight());
+        //return the maximum height of the two subtrees
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -285,23 +287,25 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns a reference to the parent of a node containing value
      */
     public Node<T> parent(T value) {
+        //if the value is not in the tree return null
         if (!contains(value)){
             return null;
         } else {
+            //call recursive method to find the parent of the node containing the value
             return recursiveParent(value, root, null);
         }
-        
     }
-    
     private Node<T> recursiveParent(T value, Node<T> current, Node<T> parent) {
-        if (current == null) {
-            return null; // Value not found in the tree
-        } else if (value.compareTo(current.getValue()) == 0) {
-            return parent; // Found the node containing the value, return its parent
+        // Found the node containing the value 
+        if (value.compareTo(current.getValue()) == 0) {
+            // return its parent
+            return parent; 
         } else if (value.compareTo(current.getValue()) < 0) {
-            return recursiveParent(value, current.getLeft(), current); // Search in the left subtree
+            // Search in the left subtree
+            return recursiveParent(value, current.getLeft(), current); 
         } else {
-            return recursiveParent(value, current.getRight(), current); // Search in the right subtree
+            // Search in the right subtree
+            return recursiveParent(value, current.getRight(), current); 
         }
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -313,23 +317,35 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns the level of the node containing value. If there is more than one node with the same value, it returns the highest level
      */
     public int level(T value) {
+        //if value is not in the tree return -1
         if (!contains(value)){
             return -1;
         } else {
-            return recursiveLevel(value, root, 0);
+            //call recursive method
+            return recursiveLevel(value, root, 0, -1);
         }
     }
-    
-    private int recursiveLevel(T value, Node<T> current, int level) {
-        if (current == null) {
-            return -1; // Value not found in the tree
-        } else if (value.compareTo(current.getValue()) == 0) {
-            return level; // Found the node containing the value, return its level
-        } else if (value.compareTo(current.getValue()) < 0) {
-            return recursiveLevel(value, current.getLeft(), level + 1); // Search in the left subtree, increment level
-        } else {
-            return recursiveLevel(value, current.getRight(), level + 1); // Search in the right subtree, increment level
+    private int recursiveLevel(T value, Node<T> current, int level, int highestLevel) {
+        //mark current node as visited
+        current.setVisited(true);
+        //if the value is found set the new highest level
+        if (value.compareTo(current.getValue()) == 0) {
+            highestLevel = Math.max(highestLevel, level);
         }
+        //check the left subtree for the value
+        if (value.compareTo(current.getValue()) < 0 && !current.getLeft().isVisited()) {
+            // Search in the left subtree, increment level
+            highestLevel = recursiveLevel(value, current.getLeft(), level + 1, highestLevel); 
+        } 
+        //check the right subtree for the value
+        if (value.compareTo(current.getValue()) > 0 && !current.getRight().isVisited()) {
+            // Search in the right subtree, increment level
+            highestLevel = recursiveLevel(value, current.getRight(), level + 1, highestLevel); 
+        }
+        //visited is reset to false
+        current.setVisited(false);
+        //return highest level
+        return highestLevel;
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -340,19 +356,21 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns true if the tree is complete; must call a recursive method recIsComplete(root, index)
      */
     public boolean isComplete() {
+        //start at the root, index 0
         int index = 0;
+        //call recursive method
         return recIsComplete(root, index, size());
     }
-    
     private boolean recIsComplete(Node<T> node, int index, int size) {
+        // Empty subtree is complete
         if (node == null) {
-            return true; // Empty subtree is complete
+            return true; 
         }
-        
+        // Index of node exceeds the number of nodes in the tree
         if (index >= size) {
-            return false; // Index of node exceeds the number of nodes in the tree
+            return false; 
         }
-        
+        //return true if index < size
         return recIsComplete(node.getLeft(), 2 * index + 1, size) &&
                recIsComplete(node.getRight(), 2 * index + 2, size);
     }
@@ -384,62 +402,25 @@ public class BST<T extends Comparable> implements BSTInterface<T>
      * returns true if the tree has duplicate values
      */
     public boolean hasDoubles() {
+        //create hash set
         HashSet<T> set = new HashSet<>();
+        //call recursive method
         return recHasDoubles(root, set);
     }
-    
     private boolean recHasDoubles(Node<T> node, HashSet<T> set) {
+        //if the tree is empty return false, and empty tree doesnt have doubled values
         if (node == null) {
             return false;
         }
-        
+        //if the set already contains the value
         if (set.contains(node.getValue())) {
             return true; // Found a duplicate value
         }
-        
+        //add value to set
         set.add(node.getValue());
-        
+        //if the left subtree or the right subtree contains a dupilcate value return true
         return recHasDoubles(node.getLeft(), set) || recHasDoubles(node.getRight(), set);
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-public static void main(String[] args) {
-    BST<Integer> binaryst = new BST<>();
-    binaryst.add(25);
-    binaryst.add(15);
-    binaryst.add(50);
-    binaryst.add(10);
-    binaryst.add(22);
-    binaryst.add(35);
-    binaryst.add(70);
-    binaryst.add(4);
-    binaryst.add(12);
-    binaryst.add(18);
-    binaryst.add(24);
-    binaryst.add(31);
-    binaryst.add(44);
-    binaryst.add(66);
-    binaryst.add(90);
-    
-
-    binaryst.printBST(PREORDER);
-    Node<Integer> root = binaryst.getRoot();
-    int heightbst = binaryst.height();
-    boolean perfect = binaryst.isPerfect();
-    boolean complete = binaryst.isComplete();
-    boolean doubles = binaryst.hasDoubles();
-    int value = 50;
-    Node<Integer> p = binaryst.parent(value);
-    int i = binaryst.level(value);
-    System.out.println("Height: " + heightbst);
-    System.out.println("Is Perfect: " + perfect);
-    System.out.println("Is Complete: " + complete);
-    System.out.println("Has Doubles; " + doubles);
-    System.out.println("Root is: "  + root.getValue());
-    System.out.println("The parent of " + value + " is " + p.getValue());
-    System.out.println("The level of the value " + value + " is " + i);
-
-}
-    
 }
 

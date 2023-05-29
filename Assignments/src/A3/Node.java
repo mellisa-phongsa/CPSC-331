@@ -12,6 +12,8 @@ public class Node<T extends Comparable> {
     private T value;
     private Node<T> left, right, parent;
     private boolean color; 
+    //added var
+    private boolean visited;
     
     public Node() {
         left = null;
@@ -69,4 +71,17 @@ public class Node<T extends Comparable> {
         }
         return "";
     }
+
+    //added methods
+    //names: Mellisa Phongsa, Hassan Sohail
+    //isVisited: checks if a node has been visite
+    //setVisited: marks node as visited
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this. visited = visited;
+    }
+
 }
