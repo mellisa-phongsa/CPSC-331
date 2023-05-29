@@ -18,6 +18,9 @@ public class Main {
         //create filename
         String fileName = "size" + treeSize + ".txt";
 
+        // Variable for totalheight
+        int totalheight = 0;
+
         //try to write to file
         try (PrintWriter pw = new PrintWriter(new FileWriter(fileName))) {
             //generate 100 trees
@@ -43,6 +46,9 @@ public class Main {
                 boolean perfect = t.isPerfect();
                 boolean complete = t.isComplete();
                 boolean doubles = t.hasDoubles();
+
+                // incrementing the totalheight by height of tree
+                totalheight += heightbst;
 
                 System.out.println("Root: " + root.getValue()); //print root of tree
                 System.out.println("Height: " + heightbst); //print height of tree
@@ -88,5 +94,10 @@ public class Main {
             //if there is an error writing to file print error message
             System.out.println("Error writing to file: " + e.getMessage());
         }
+        // Variable for average height of the tree
+        int averageheight = totalheight/100;
+
+        // Printing the average height of the trees
+        System.out.println("The average height of the 100 trees of size " + treeSize + " is " + averageheight);
     }
 }
