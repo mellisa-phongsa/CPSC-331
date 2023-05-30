@@ -118,8 +118,8 @@ public class Main {
         pw.println("The toal number of perfect trees is " + perfectrees);
         System.out.println("The toal number of complete trees is " + completetrees);
         pw.println("The toal number of complete trees is " + completetrees);
-        System.out.println("The total number of double trees is " + doubletrees);
-        pw.println("The total number of double trees is " + doubletrees);
+        System.out.println("The total number of trees with doubles is " + doubletrees);
+        pw.println("The total number of trees with doubles is " + doubletrees);
 
         } catch (IOException e) {
             //if there is an error writing to file print error message
