@@ -21,6 +21,12 @@ public class Main {
         // Variable for totalheight
         int totalheight = 0;
 
+        int perfectrees = 0;
+
+        int completetrees = 0;
+
+        int doubletrees = 0;
+
         //try to write to file
         try (PrintWriter pw = new PrintWriter(new FileWriter(fileName))) {
             //generate 100 trees
@@ -49,6 +55,18 @@ public class Main {
 
                 // incrementing the totalheight by height of tree
                 totalheight += heightbst;
+
+                if (t.isPerfect() == true) {
+                    perfectrees++;
+                }
+
+                if (t.isComplete() == true) {
+                    completetrees++;
+                }
+
+                if (t.hasDoubles() == true) {
+                    doubletrees++;
+                }
 
                 System.out.println("Root: " + root.getValue()); //print root of tree
                 System.out.println("Height: " + heightbst); //print height of tree
@@ -96,6 +114,12 @@ public class Main {
         // Printing the average height of the trees
         System.out.println("The average height of the 100 trees of size " + treeSize + " is " + averageheight);
         pw.println("The average height of the 100 trees of size " + treeSize + " is " + averageheight);
+        System.out.println("The toal number of perfect trees is " + perfectrees);
+        pw.println("The toal number of perfect trees is " + perfectrees);
+        System.out.println("The toal number of complete trees is " + completetrees);
+        pw.println("The toal number of complete trees is " + completetrees);
+        System.out.println("The total number of double trees is " + doubletrees);
+        pw.println("The total number of double trees is " + doubletrees);
 
         } catch (IOException e) {
             //if there is an error writing to file print error message
