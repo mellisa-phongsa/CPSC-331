@@ -1,0 +1,300 @@
+
+Array Size	Linear Search Time	Binary Search Time
+1000		771500				35000
+
+Array Size	Linear Search Time	Binary Search Time
+11000		824100				36600
+
+Array Size	Linear Search Time	Binary Search Time
+21000		1266200				43300
+
+Array Size	Linear Search Time	Binary Search Time
+31000		82500				18400
+
+Array Size	Linear Search Time	Binary Search Time
+41000		85700				9400
+
+Array Size	Linear Search Time	Binary Search Time
+51000		113000				9900
+
+Array Size	Linear Search Time	Binary Search Time
+61000		73800				10500
+
+Array Size	Linear Search Time	Binary Search Time
+71000		78700				9800
+
+Array Size	Linear Search Time	Binary Search Time
+81000		98500				10900
+
+Array Size	Linear Search Time	Binary Search Time
+91000		85400				9400
+
+Array Size	Linear Search Time	Binary Search Time
+101000		141100				11900
+
+Array Size	Linear Search Time	Binary Search Time
+111000		102400				11100
+
+Array Size	Linear Search Time	Binary Search Time
+121000		111000				11100
+
+Array Size	Linear Search Time	Binary Search Time
+131000		86200				14100
+
+Array Size	Linear Search Time	Binary Search Time
+141000		359300				29300
+
+Array Size	Linear Search Time	Binary Search Time
+151000		95800				11400
+
+Array Size	Linear Search Time	Binary Search Time
+161000		118700				12600
+
+Array Size	Linear Search Time	Binary Search Time
+171000		154700				12200
+
+Array Size	Linear Search Time	Binary Search Time
+181000		124900				28300
+
+Array Size	Linear Search Time	Binary Search Time
+191000		108500				21200
+
+Array Size	Linear Search Time	Binary Search Time
+201000		96200				8400
+
+Array Size	Linear Search Time	Binary Search Time
+211000		101500				9200
+
+Array Size	Linear Search Time	Binary Search Time
+221000		155600				11500
+
+Array Size	Linear Search Time	Binary Search Time
+231000		100400				24100
+
+Array Size	Linear Search Time	Binary Search Time
+241000		109100				8400
+
+Array Size	Linear Search Time	Binary Search Time
+251000		141800				9000
+
+Array Size	Linear Search Time	Binary Search Time
+261000		119500				10100
+
+Array Size	Linear Search Time	Binary Search Time
+271000		132200				9200
+
+Array Size	Linear Search Time	Binary Search Time
+281000		111800				11800
+
+Array Size	Linear Search Time	Binary Search Time
+291000		140000				8700
+
+Array Size	Linear Search Time	Binary Search Time
+301000		150500				23100
+
+Array Size	Linear Search Time	Binary Search Time
+311000		161300				10900
+
+Array Size	Linear Search Time	Binary Search Time
+321000		128300				10100
+
+Array Size	Linear Search Time	Binary Search Time
+331000		122400				9100
+
+Array Size	Linear Search Time	Binary Search Time
+341000		231000				9600
+
+Array Size	Linear Search Time	Binary Search Time
+351000		150300				10600
+
+Array Size	Linear Search Time	Binary Search Time
+361000		155500				11200
+
+Array Size	Linear Search Time	Binary Search Time
+371000		135100				10800
+
+Array Size	Linear Search Time	Binary Search Time
+381000		166700				13300
+
+Array Size	Linear Search Time	Binary Search Time
+391000		132000				9000
+
+Array Size	Linear Search Time	Binary Search Time
+401000		139800				8400
+
+Array Size	Linear Search Time	Binary Search Time
+411000		154000				13700
+
+Array Size	Linear Search Time	Binary Search Time
+421000		132900				12400
+
+Array Size	Linear Search Time	Binary Search Time
+431000		123900				9900
+
+Array Size	Linear Search Time	Binary Search Time
+441000		132900				12200
+
+Array Size	Linear Search Time	Binary Search Time
+451000		123000				9500
+
+Array Size	Linear Search Time	Binary Search Time
+461000		152700				13600
+
+Array Size	Linear Search Time	Binary Search Time
+471000		170700				15200
+
+Array Size	Linear Search Time	Binary Search Time
+481000		194300				12900
+
+Array Size	Linear Search Time	Binary Search Time
+491000		145700				15900
+
+Array Size	Linear Search Time	Binary Search Time
+501000		152600				23300
+
+Array Size	Linear Search Time	Binary Search Time
+511000		166200				14100
+
+Array Size	Linear Search Time	Binary Search Time
+521000		184600				19900
+
+Array Size	Linear Search Time	Binary Search Time
+531000		186400				15800
+
+Array Size	Linear Search Time	Binary Search Time
+541000		213700				13600
+
+Array Size	Linear Search Time	Binary Search Time
+551000		182400				25400
+
+Array Size	Linear Search Time	Binary Search Time
+561000		186800				13400
+
+Array Size	Linear Search Time	Binary Search Time
+571000		154100				11600
+
+Array Size	Linear Search Time	Binary Search Time
+581000		158700				9900
+
+Array Size	Linear Search Time	Binary Search Time
+591000		200200				10100
+
+Array Size	Linear Search Time	Binary Search Time
+601000		154900				13600
+
+Array Size	Linear Search Time	Binary Search Time
+611000		198100				16500
+
+Array Size	Linear Search Time	Binary Search Time
+621000		215800				13000
+
+Array Size	Linear Search Time	Binary Search Time
+631000		195800				13400
+
+Array Size	Linear Search Time	Binary Search Time
+641000		209900				16400
+
+Array Size	Linear Search Time	Binary Search Time
+651000		204100				21700
+
+Array Size	Linear Search Time	Binary Search Time
+661000		236900				14400
+
+Array Size	Linear Search Time	Binary Search Time
+671000		292900				13300
+
+Array Size	Linear Search Time	Binary Search Time
+681000		260400				16600
+
+Array Size	Linear Search Time	Binary Search Time
+691000		261200				15200
+
+Array Size	Linear Search Time	Binary Search Time
+701000		253400				12500
+
+Array Size	Linear Search Time	Binary Search Time
+711000		227600				19500
+
+Array Size	Linear Search Time	Binary Search Time
+721000		300400				26500
+
+Array Size	Linear Search Time	Binary Search Time
+731000		334100				22700
+
+Array Size	Linear Search Time	Binary Search Time
+741000		291700				20000
+
+Array Size	Linear Search Time	Binary Search Time
+751000		277900				21000
+
+Array Size	Linear Search Time	Binary Search Time
+761000		359200				12300
+
+Array Size	Linear Search Time	Binary Search Time
+771000		230800				25200
+
+Array Size	Linear Search Time	Binary Search Time
+781000		301200				20900
+
+Array Size	Linear Search Time	Binary Search Time
+791000		260300				23300
+
+Array Size	Linear Search Time	Binary Search Time
+801000		315200				13100
+
+Array Size	Linear Search Time	Binary Search Time
+811000		241000				13700
+
+Array Size	Linear Search Time	Binary Search Time
+821000		251000				12600
+
+Array Size	Linear Search Time	Binary Search Time
+831000		255100				44300
+
+Array Size	Linear Search Time	Binary Search Time
+841000		265700				44700
+
+Array Size	Linear Search Time	Binary Search Time
+851000		258300				37200
+
+Array Size	Linear Search Time	Binary Search Time
+861000		266100				21900
+
+Array Size	Linear Search Time	Binary Search Time
+871000		273400				21500
+
+Array Size	Linear Search Time	Binary Search Time
+881000		258300				11400
+
+Array Size	Linear Search Time	Binary Search Time
+891000		196400				10600
+
+Array Size	Linear Search Time	Binary Search Time
+901000		212400				14400
+
+Array Size	Linear Search Time	Binary Search Time
+911000		208600				11600
+
+Array Size	Linear Search Time	Binary Search Time
+921000		213200				15000
+
+Array Size	Linear Search Time	Binary Search Time
+931000		228800				12700
+
+Array Size	Linear Search Time	Binary Search Time
+941000		196600				11600
+
+Array Size	Linear Search Time	Binary Search Time
+951000		201200				11600
+
+Array Size	Linear Search Time	Binary Search Time
+961000		255600				11500
+
+Array Size	Linear Search Time	Binary Search Time
+971000		230900				12400
+
+Array Size	Linear Search Time	Binary Search Time
+981000		219000				15900
+
+Array Size	Linear Search Time	Binary Search Time
+991000		223300				13200
