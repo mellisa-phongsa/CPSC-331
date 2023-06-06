@@ -25,6 +25,7 @@ public class Main {
                     linearSearchTime += searchTime;
                 }
 
+                //sort the array
                 MergeSort.mergeSort(searchArray);
 
                 //total binary search time
@@ -37,15 +38,17 @@ public class Main {
                     binarySearchTime += searchTime;
                 }
 
+                //print to file
                 pw.println("\nArray Size\tLinear Search Time\tBinary Search Time");
                 pw.printf("%d\t\t%d\t\t\t\t%d%n", n, linearSearchTime, binarySearchTime);
+
+                //set array to null
                 searchArray = null;
             }
 
         } catch (IOException e) {
             //if there is an error writing to file print error message
             System.out.println("Error writing to file: " + e.getMessage());
-        }
-        
+        } 
     }
 }
