@@ -9,7 +9,7 @@ public class Main {
         HashTableSC<HashableObject> hashTable;
         hashTable = new HashTableSC<>(9973);
 
-        try (PrintWriter pw = new PrintWriter(new FileWriter("Part4Output.txt"))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter("Part1Output.txt"))) {
             //create one search array at a time, search it, record running time
             //set searchArray = null and repeat
             for (int n = 1000; n <= 1000000; n += 10000) {
@@ -55,7 +55,7 @@ public class Main {
             System.out.println("Error writing to file: " + e.getMessage());
         }
         
-        try (PrintWriter pw = new PrintWriter(new FileWriter("Part3Output.txt"))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter("Part2Output.txt"))) {
             //create one search array at a time, search it, record running time
             //set searchArray = null and repeat
             for (int n = 1000; n <= 1000000; n += 10000) {
