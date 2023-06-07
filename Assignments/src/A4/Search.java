@@ -1,10 +1,7 @@
 
 public class Search {
 
-    public static long linearSearch(int[] searchArray, int element) {
-        //start timer
-        long startTime = System.nanoTime();
-
+    public static void linearSearch(int[] searchArray, int element) {
         //iterate through the search array
         for (int i = 0; i < searchArray.length; i++) {
             //if the element in the elements array is found in the search array
@@ -13,17 +10,10 @@ public class Search {
                 break;
             }
         }
-        //end timer
-        long endTime = System.nanoTime();
-
-        //return time taken
-        return endTime - startTime;
+       
     }
 
-    public static long binarySearch(int[] searchArray, int element) {
-        //start timer
-        long startTime = System.nanoTime();
-
+    public static void binarySearch(int[] searchArray, int element) {
         //index of the first and last elements in the array
         int low = 0;
         int high = searchArray.length - 1;
@@ -48,11 +38,5 @@ public class Search {
                 high = mid - 1;
             }
         }
-
-        //stop timer
-        long endTime = System.nanoTime();
-
-        //return time taken
-        return endTime - startTime;
     }
 }
