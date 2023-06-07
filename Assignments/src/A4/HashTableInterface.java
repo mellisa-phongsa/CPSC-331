@@ -9,7 +9,7 @@
 public interface HashTableInterface<T extends Hashable>
 {
     public void clear();
-    public void add(T item);
-    public void remove(T item);
-    public boolean contains(T item);
+    public void add(int item);
+    public void remove(int item);
+    public boolean contains(int item);
 }

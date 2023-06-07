@@ -18,28 +18,25 @@ public class HashTableSC<T extends Hashable> implements HashTableInterface<T> {
     public void add(int item) {
         Integer value = item;
         int hash = hash(value);
-        int index = hash % hashTableSize;
-        if (hashTable[index] == null) {
-            hashTable[index] = new LinkedList<>();
+        if (hashTable[hash] == null) {
+            hashTable[hash] = new LinkedList<>();
         }
-        hashTable[index].add(value);
+        hashTable[hash].add(value);
     }
 
     public void remove(int item) {
         Integer value = item;
         int hash = hash(value);
-        int index = hash % hashTableSize;
-        if (hashTable[index] != null) {
-            hashTable[index].remove(value);
+        if (hashTable[hash] != null) {
+            hashTable[hash].remove(value);
         }
     }
 
     public boolean contains(int item) {
         Integer value = item;
         int hash = hash(value);
-        int index = hash % hashTableSize;
-        if (hashTable[index] != null) {
-            return hashTable[index].contains(value);
+        if (hashTable[hash] != null) {
+            return hashTable[hash].contains(value);
         }
         return false;
     }
@@ -49,24 +46,6 @@ public class HashTableSC<T extends Hashable> implements HashTableInterface<T> {
         x = ((x >>> 16) ^ x) * 0x45d9f3b;
         x = (x >>> 16) ^ x;
         return Math.abs(x) % hashTableSize;
-    }
-
-    @Override
-    public void add(T item) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
-    }
-
-    @Override
-    public void remove(T item) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
-    }
-
-    @Override
-    public boolean contains(T item) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'contains'");
     }
 }
 

@@ -60,6 +60,28 @@ public class Main {
                 //create the array 
                 int[] searchArray = ArrayGenerator.generateSearchArray(n);
 
+                // Hash search time
+
+                // Building the hash table
+                for (int element : searchArray) {
+                    hashTable.add(element);
+                }
+
+                // variable for hash search time
+                long hashsearchTime = 0;
+
+                // doing the hash search using the elements array
+                for (int element : elementsArray) {
+                    long startTime = System.nanoTime();
+                    hashTable.contains(element);
+                    long endTime = System.nanoTime();
+                    long totaltime = endTime - startTime;
+                    hashsearchTime += totaltime;
+                }
+
+                // clearing the hashtable after each iteration
+                hashTable.clear();
+
                 //sort the array
                 MergeSort.mergeSort(searchArray);
 
@@ -72,20 +94,6 @@ public class Main {
                     //add time it took to find each element to the total time
                     binarySearchTime += searchTime;
                 }
-
-                // Hash search time
-                for (int element : elementsArray) {
-                    hashTable.add(element);
-                }
-
-                long startTime = System.nanoTime();
-
-                 for (int element : elementsArray) {
-                    hashTable.contains(element);
-                }
-                long endTime = System.nanoTime();
-                long hashsearchTime = endTime - startTime;
-
 
 
                 //print to file
