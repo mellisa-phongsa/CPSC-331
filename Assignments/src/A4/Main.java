@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Main {
@@ -39,8 +38,9 @@ public class Main {
                 }
 
                 //print to file
-                pw.println("\nArray Size\tLinear Search Time\tBinary Search Time");
-                pw.printf("%d\t\t%d\t\t\t\t%d%n", n, linearSearchTime, binarySearchTime);
+                pw.println("\n\nArray Size = " + n);
+                pw.println("Linear Search = " + linearSearchTime + "ns");
+                pw.println("Binary Search = " + binarySearchTime + "ns");
 
                 //set array to null
                 searchArray = null;

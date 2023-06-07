@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 public class Search {
 
     public static long linearSearch(int[] searchArray, int element) {
@@ -24,9 +24,30 @@ public class Search {
         //start timer
         long startTime = System.nanoTime();
 
-        //binary search returns the index of the value if it is found in the array
-        //and returns -1 if it is not found in the array
-        int index = Arrays.binarySearch(searchArray, element);
+        //index of the first and last elements in the array
+        int low = 0;
+        int high = searchArray.length - 1;
+
+        //while low is less than or equal to high
+        while (low <= high) {
+            //find the index of the new middle
+            int mid = low + (high - low) / 2;
+
+            //if the value in the middle of the array is equal to the element break out of the loop
+            if (element == searchArray[mid]) {
+                break;
+
+            //if the element is greater than the middle value only look at the values greater than mid
+            } else if (element > searchArray[mid]) {
+                //find the index of the new low
+                low = mid + 1;
+
+            //if the element is less than the middle value only look at the values less than mid
+            } else {
+                //find the index of the new high
+                high = mid - 1;
+            }
+        }
 
         //stop timer
         long endTime = System.nanoTime();
