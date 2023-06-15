@@ -43,5 +43,9 @@ public class RandomAdjMatrixGraph extends AdjMatrixGraph
     {
         return numEdges;
     }
+
+    public Node[][] getMatrix() {
+        return adjMatrix;
+    }
     
 }
