@@ -1,0 +1,9 @@
+Graph size: 5000 Graph Density: 1 Dijkstra: 107042 milliseconds Floyd: 66577 milliseconds
+Graph size: 5000 Graph Density: 2 Dijkstra: 106729 milliseconds Floyd: 66005 milliseconds
+Graph size: 5000 Graph Density: 3 Dijkstra: 111032 milliseconds Floyd: 64075 milliseconds
+Graph size: 5000 Graph Density: 4 Dijkstra: 107992 milliseconds Floyd: 60546 milliseconds
+Graph size: 5000 Graph Density: 5 Dijkstra: 107801 milliseconds Floyd: 62516 milliseconds
+Graph size: 5000 Graph Density: 6 Dijkstra: 106316 milliseconds Floyd: 86793 milliseconds
+Graph size: 5000 Graph Density: 7 Dijkstra: 106238 milliseconds Floyd: 83657 milliseconds
+Graph size: 5000 Graph Density: 8 Dijkstra: 112052 milliseconds Floyd: 83846 milliseconds
+Graph size: 5000 Graph Density: 9 Dijkstra: 106805 milliseconds Floyd: 86553 milliseconds
